@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            background-color: white;
+            cursor: default;
+        }
+
+        #Topbar {
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            background-color: lightcyan;
+        }
+
+        .Topbar_items {
+            margin: 5px;
+        }
+
+        #Switch-Language {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: blue;
+            text-decoration: underline;
+            cursor: default;
+            font: inherit;
+            font-size: 15px;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: blue;
+            cursor: default;
+        }
+
+        h1 {
+            text-align: center !important;
+        }
+
+        /* Page content animation */
+        .English-version, .Chinese-version {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+
+        button {
+            transition: 0.5s;
+            transform-origin: top right;
+        }
+
+        a {
+            background: transparent;
+            transition: 0.5s;
+            transform-origin: top right;
+        }
+
+        a:hover, button:hover {
+            transform: rotate(3deg) scale(1.2);
+            cursor: alias !important;
+        }
+
+        .content {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .fade {
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        p {
+            margin-left: 7%;
+            margin-right: 30%;
+            text-align: justify;
+            font-size: x-large;
+        }
+
+    </style>
+</head>
+<body>
+<noscript><h1>Please enable JavaScript for this website to work.</h1></noscript>
+
+<!-- Topbar (unchanged) -->
+<div id="Topbar">
+    <a href="home.html" class="Topbar_items">Home</a>
+    <a href="About%20me.html" class="Topbar_items">About Me</a>
+    <a href="books.html" class="Topbar_items">My Books</a>
+    <a href="my_blog.html" class="Topbar_items">My Blog</a>
+    <a href="resources.html" class="Topbar_items">Resources</a>
+    <a href="contact.html" class="Topbar_items">Contact</a>
+    <button id="Switch-Language">切换成汉语</button>
+</div>
+
+<!-- Page content with language versions -->
+<div class="content">
+    <div class="Chinese-version">
+        <h1>联系我</h1>
+    </div>
+
+    <div class="English-version">
+        <h1>Contact</h1>
+    </div>
+</div>
+
+<script>
+    // Functions to show/hide content
+    function hide_class(elements) {
+        for (const el of elements) {
+            el.classList.add('hidden');
+        }
+    }
+
+    function show_class(elements) {
+        for (const el of elements) {
+            el.classList.remove('hidden');
+        }
+    }
+
+    // Language switch function
+    function switch_language() {
+        switch_languageBTN.classList.add("fade");
+
+        setTimeout(() => {
+            if (current_language === "Chinese") {
+                show_class(english_version);
+                hide_class(chinese_version);
+                current_language = "English";
+                switch_languageBTN.textContent = "切换成汉语";
+            } else {
+                hide_class(english_version);
+                show_class(chinese_version);
+                current_language = "Chinese";
+                switch_languageBTN.textContent = "Switch to English";
+            }
+            switch_languageBTN.classList.remove("fade");
+        }, 250);
+    }
+
+    const switch_languageBTN = document.getElementById("Switch-Language");
+    let current_language = "English";
+    const english_version = document.getElementsByClassName("English-version");
+    const chinese_version = document.getElementsByClassName("Chinese-version");
+
+    // Hide Chinese content initially
+    hide_class(chinese_version);
+
+    switch_languageBTN.addEventListener("click", switch_language);
+
+</script>
+</body>
+</html>

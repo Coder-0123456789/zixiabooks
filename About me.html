@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            background-color: white;
+            cursor: default;
+        }
+
+        #Topbar {
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            background-color: lightcyan;
+        }
+
+        .Topbar_items {
+            margin: 5px;
+        }
+
+        #Switch-Language {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: blue;
+            text-decoration: underline;
+            cursor: default;
+            font: inherit;
+            font-size: 15px;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: blue;
+            cursor: default;
+        }
+
+        h1 {
+            text-align: center !important;
+            margin: 50px;
+        }
+
+        /* Page content animation */
+        .English-version, .Chinese-version {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+
+        button {
+            transition: 0.5s;
+            transform-origin: top right;
+        }
+
+        a {
+            background: transparent;
+            transition: 0.5s;
+            transform-origin: top right;
+        }
+
+        a:hover, button:hover {
+            transform: rotate(3deg) scale(1.2) !important;
+            cursor: alias !important;
+        }
+
+        .content {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .fade {
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        p {
+            margin-left: 7%;
+            margin-right: 30%;
+            text-align: justify;
+            font-size: x-large;
+        }
+
+        h2 {
+            text-align: center !important;
+            margin: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<noscript><h1>Please enable JavaScript for this website to work.</h1></noscript>
+
+<!-- Topbar (unchanged) -->
+<div id="Topbar">
+    <a href="home.html" class="Topbar_items">Home</a>
+    <a href="About%20me.html" class="Topbar_items">About Me</a>
+    <a href="books.html" class="Topbar_items">My Books</a>
+    <a href="my_blog.html" class="Topbar_items">My Blog</a>
+    <a href="resources.html" class="Topbar_items">Resources</a>
+    <a href="contact.html" class="Topbar_items">Contact</a>
+    <button id="Switch-Language">切换成汉语</button>
+</div>
+
+<!-- Page content with language versions -->
+<div class="content">
+    <div class="Chinese-version">
+        <h1>关于我</h1>
+        <h2>童书作家</h2>
+        <p>2013年，我的女儿开始学习拼音。当时我对市面上的拼音学习材料并不满意，于是开始尝试自己编写。2016年，我出版了<a href="books.html">《魔法拼音国》</a>。这套书受到了许多孩子和家长的喜爱，也取得了不错的反响。
+        </p><p>
+            于是，我辞去原来的工作，开始专心从事儿童图书创作。之后又出版了<a href="books.html">《“小小语言家”汉语分级读物》</a>和<a href="books.html">《“魔法树”汉字启蒙翻翻书》</a>。目前，还有更多新的图书正在构思和创作之中。
+        </p><p>
+            在我的内心深处，一直住着一个长不大的小女孩。她用好奇的目光感知世界，编织故事，也希望通过故事帮助汉语学习者更好地学习和理解汉语。
+        </p>
+        <h2>汉语教育者</h2>
+        <p>我既是一名对外汉语教育者，也是一名从事汉语母语教育的教育者。</p>
+        <p>高中三年的学习让我几乎透支了全部精力，以至于大学一年级时，我常常在课堂上昏昏欲睡。直到有一天，在“现代汉语”课上，老师提到有一个职业是<strong>教外国学生学习汉语。</strong></p>
+        <p>那一刻，我突然完全清醒，内心产生了一种非常强烈的感觉：<strong>这就是我想做的事情。</strong></p>
+        <p>这个念头促使我后来报考研究生，并进入北京语言大学学习对外汉语教学。</p>
+        <p>此后，我曾在清华大学和北京语言大学教授不同水平的汉语课程。</p>
+        <p>我希望未来能够继续向世界传播汉语与中华文化，并把优秀的中国故事讲给更多人听。</p>
+
+    </div>
+
+
+
+
+    <div class="English-version">
+        <h1>About Me</h1>
+        <h2>Children’s book author</h2>
+        <p>In 2013, when my daughter began learning <b>pinyin,</b> I found myself dissatisfied with the existing learning materials available on the market. That experience inspired me to start writing my own.</p>
+        <p>In 2016, I published <a href="books.html">Magic Pinyin Land(《魔法拼音国》)</a>, which was warmly received by many children and parents. Encouraged by its success, I left my previous job and began focusing on writing children’s books.</p>
+        <p>Since then, I have published <a href="books.html">The Little Linguist Chinese Graded Readers(《“小小语言家”汉语分级读物》)</a> and <a href="books.html">The Magic Tree Chinese Character Lift-the-Flap Books(《“魔法树”汉字启蒙翻翻书》).</a> Several new projects are currently in development.</p>
+        <p>Deep inside me lives a little girl who never quite grows up. She observes the world with curiosity, creates stories, and hopes to help young learners improve their Chinese through storytelling.</p>
+        <h2>Mandarin educator</h2>
+        <p>I am both a <strong>teacher of Chinese as a second language</strong> and an educator involved in <strong>Chinese language education for native speakers.</strong></p>
+        <p>After the intense academic pressure of high school, I entered my first year of university feeling exhausted and often struggled to stay awake in class. One day, however, during a <strong>Modern Chinese</strong> lecture, the professor mentioned a profession I had never seriously considered before: <strong>teaching Chinese to international students.</strong></p>
+        <p>At that moment, I suddenly felt completely awake. I had a strong sense that <strong>this was what I was meant to do.</strong></p>
+        <p>That realization led me to pursue graduate studies in <strong>Teaching Chinese as a Second Language at Beijing Language and Culture University.</strong></p>
+        <p>Later, I taught Chinese courses at different levels at <strong>Tsinghua University</strong> and <strong>Beijing Language and Culture University</strong>.</p>
+        <p>I hope to continue sharing the Chinese language and Chinese culture with the world, and to tell meaningful Chinese stories to a broader audience.<p>
+
+    </div>
+</div>
+
+<script>
+    // Functions to show/hide content
+    function hide_class(elements) {
+        for (const el of elements) {
+            el.classList.add('hidden');
+        }
+    }
+
+    function show_class(elements) {
+        for (const el of elements) {
+            el.classList.remove('hidden');
+        }
+    }
+
+    // Language switch function
+    function switch_language() {
+        switch_languageBTN.classList.add("fade");
+
+        setTimeout(() => {
+            if (current_language === "Chinese") {
+                show_class(english_version);
+                hide_class(chinese_version);
+                current_language = "English";
+                switch_languageBTN.textContent = "切换成汉语";
+            } else {
+                hide_class(english_version);
+                show_class(chinese_version);
+                current_language = "Chinese";
+                switch_languageBTN.textContent = "Switch to English";
+            }
+            switch_languageBTN.classList.remove("fade");
+        }, 250);
+    }
+
+    const switch_languageBTN = document.getElementById("Switch-Language");
+    let current_language = "English";
+    const english_version = document.getElementsByClassName("English-version");
+    const chinese_version = document.getElementsByClassName("Chinese-version");
+
+    // Hide Chinese content initially
+    hide_class(chinese_version);
+
+    switch_languageBTN.addEventListener("click", switch_language);
+
+</script>
+</body>
+</html>
