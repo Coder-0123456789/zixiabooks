@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic SEO -->
+    <meta name="description" content="Zixia Jiang's website">
+    <meta name="author" content="Zixia Jiang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#87CEEB">
+
+    <!-- Open Graph (social media previews) -->
+    <meta property="og:title" content="My Website">
+    <meta property="og:description" content="Zixia Jiang's website: Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zixiabooks.org">
+    <meta property="og:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- Twitter card preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Website">
+    <meta name="twitter:description" content="Zixia Jiang's website: Home">
+    <meta name="twitter:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- PWA / mobile app behavior -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Home">
+
+    <!-- Prevent automatic phone/email detection on iOS -->
+    <meta name="format-detection" content="telephone=no">
     <style>
         * {
             font-family: sans-serif;
@@ -81,12 +111,25 @@
             opacity: 0;
             transition: opacity 0.25s;
         }
+
         p {
             margin-left: 7%;
-            margin-right: 30%;
+            margin-right: 7%;
             text-align: justify;
             font-size: x-large;
         }
+
+        .main_container {
+            display: grid;
+            grid-template-areas:
+            "header header header"
+            "sidebar main main";
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        #Topbar {grid-area: header;}
+        #sidebar {grid-area: sidebar;}
+        .content {grid-area: main;}
 
     </style>
 </head>
@@ -94,17 +137,20 @@
 <noscript><h1>Please enable JavaScript for this website to work.</h1></noscript>
 
 <!-- Topbar (unchanged) -->
+<header>
 <div id="Topbar">
     <a href="home.html" class="Topbar_items">Home</a>
     <a href="About%20me.html" class="Topbar_items">About Me</a>
     <a href="books.html" class="Topbar_items">My Books</a>
-    <a href="my_blog.html" class="Topbar_items">My Blog</a>
+    <a href="classes.html" class="Topbar_items">My Classes</a>
     <a href="resources.html" class="Topbar_items">Resources</a>
     <a href="contact.html" class="Topbar_items">Contact</a>
     <button id="Switch-Language">切换成汉语</button>
 </div>
-
+</header>
+<div id="sidebar"></div>
 <!-- Page content with language versions -->
+<article>
 <div class="content">
     <div class="Chinese-version">
         <h1>联系我</h1>
@@ -114,7 +160,7 @@
         <h1>Contact</h1>
     </div>
 </div>
-
+</article>
 <script>
     // Functions to show/hide content
     function hide_class(elements) {

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>中文课程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Playwrite+NZ+Basic&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #0f0f0f;
+            font-family: "Noto Sans SC", sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .inner-card {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 14px;
+            background: #f5f5f5;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .inner-inner-card {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 14px;
+            background: #eae9e9;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <header>
+    <h1>中文课程</h1>
+    </header>
+    <div class="inner-card">
+        <article>
+            <h2>
+                面向家中有中文语言环境、已具备一定听说基础的孩子，重点帮助孩子逐步提升识字、阅读、口语和书面表达能力。
+            </h2>
+        </article>
+    </div>
+
+    <div class="inner-card">
+        <article>
+        <h4>
+            🌟 课程特点<br><br>
+
+            趣味化教学：海外孩子学习中文时，最常遇到的问题是缺乏兴趣。课堂会结合游戏和互动活动，让孩子在轻松的氛围中自然学习。<br><br>
+
+            小班授课：每个班人数较少，确保每个孩子都有充分的参与机会。<br><br>
+
+            注重实际运用：不只是“学会”，更强调“用起来”。通过阅读、表达等环节，帮助孩子真正掌握语言。<br><br>
+
+            能力全面发展：每门课程各有侧重，同时兼顾听、说、读、写多方面能力的提升。
+        </h4>
+        </article>
+    </div>
+
+    <div class="inner-card">
+        <h2>
+            如果您感兴趣，请填写下方的表格。
+        </h2>
+    </div>
+    <footer>
+        <form name="contact" method="POST" class="inner-card" netlify>
+            <input type="hidden" name="form-name" value="contact">
+
+            <ol>
+                <li class="inner-inner-card">
+                    <p>
+                        <label>孩子姓名 <input type="text" name="child_name" required></label>
+                    </p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p>
+                        <label>家长姓名 <input type="text" name="parent_name" required></label>
+                    </p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p>
+                        <label>家长邮箱 <input type="email" name="parent_email" placeholder="email@example.com" required></label>
+                    </p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p>
+                        <label>孩子年龄 <input type="number" name="child_age" placeholder="6" required> 岁</label>
+                    </p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p>
+                        <label>孩子年级：G<input type="number" name="child_grade" placeholder="1" required></label>
+                    </p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>家里是否使用中文？</label></p>
+                    <p><label><input type="radio" name="chinese_at_home" value="经常使用/frequent" required> 经常使用</label></p>
+                    <p><label><input type="radio" name="chinese_at_home" value="中英混合/mixed"> 中英混合</label></p>
+                    <p><label><input type="radio" name="chinese_at_home" value="偶尔使用/occasional"> 偶尔使用</label></p>
+                    <p><label><input type="radio" name="chinese_at_home" value="几乎不用/rarely"> 几乎不用</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>孩子能否听懂日常中文交流？</label></p>
+                    <p><label><input type="radio" name="listening_ability" value="可以听懂大部分/understands_most" required> 可以听懂大部分</label></p>
+                    <p><label><input type="radio" name="listening_ability" value="能听懂简单表达/basic_understanding"> 能听懂简单表达</label></p>
+                    <p><label><input type="radio" name="listening_ability" value="只能听懂少量词语/limited_words"> 只能听懂少量词语</label></p>
+                    <p><label><input type="radio" name="listening_ability" value="基本听不懂/none"> 基本听不懂</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>孩子是否愿意说中文？</label></p>
+                    <p><label><input type="radio" name="speaking_willingness" value="愿意主动说/active" required> 愿意主动说</label></p>
+                    <p><label><input type="radio" name="speaking_willingness" value="不太愿意说但偶尔说/reluctant"> 不太愿意说，但偶尔说</label></p>
+                    <p><label><input type="radio" name="speaking_willingness" value="完全不说/never"> 完全不说</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>孩子是否愿意学习中文？</label></p>
+                    <p><label><input type="radio" name="learning_interest" value="是/yes" required> 是</label></p>
+                    <p><label><input type="radio" name="learning_interest" value="否/no"> 否</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>孩子目前的识字量</label></p>
+                    <p><label><input type="radio" name="character_recognition" value="100字以内/under_100" required> 100字以内</label></p>
+                    <p><label><input type="radio" name="character_recognition" value="100-300字/100_300"> 100–300字</label></p>
+                    <p><label><input type="radio" name="character_recognition" value="300-500字/300_500"> 300–500字</label></p>
+                    <p><label><input type="radio" name="character_recognition" value="500-1000字/500_1000"> 500–1000字</label></p>
+                    <p><label><input type="radio" name="character_recognition" value="1000字以上/1000_plus"> 1000字以上</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>孩子目前的阅读能力</label></p>
+                    <p><label><input type="radio" name="reading_ability" value="不会阅读/cannot_read" required> 不会阅读</label></p>
+                    <p><label><input type="radio" name="reading_ability" value="需要拼音辅助/pinyin_support"> 需要拼音辅助</label></p>
+                    <p><label><input type="radio" name="reading_ability" value="可以读简单句子/simple_sentences"> 可以读简单句子</label></p>
+                    <p><label><input type="radio" name="reading_ability" value="可以读短文/short_passages"> 可以读短文</label></p>
+                </li>
+
+                <li class="inner-inner-card">
+                    <p><label>希望报名的课程（可多选）</label></p>
+
+                    <p><label><input type="checkbox" name="preferred_course[]" value="拼音班/pinyin_class"> 拼音班</label></p>
+
+                    <p><label><input type="checkbox" name="preferred_course[]" value="汉字启蒙班/character_beginner"> 汉字启蒙班（完全不会汉字，或只认识几十个汉字）</label></p>
+
+                    <p><label><input type="checkbox" name="preferred_course[]" value="汉字进阶班/character_intermediate"> 汉字进阶班（已掌握约300个基础汉字）</label></p>
+
+                    <p><label><input type="checkbox" name="preferred_course[]" value="阅读启蒙班/reading_beginner"> 阅读启蒙班（会认一些汉字，但还不能独立阅读）</label></p>
+
+                    <p><label><input type="checkbox" name="preferred_course[]" value="阅读进阶班/reading_intermediate"> 阅读进阶班（认识较多汉字，但阅读能力较弱）</label></p>
+
+                    <p>
+                        <label><input type="checkbox" name="preferred_course[]" value="其他/other"> 其他：</label>
+                        <input type="text" name="other_course">
+                    </p>
+                </li>
+            </ol>
+
+            <p>
+                <button type="submit">提交</button>
+            </p>
+        </form>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic SEO -->
+    <meta name="description" content="Zixia Jiang's website">
+    <meta name="author" content="Zixia Jiang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#87CEEB">
+
+    <!-- Open Graph (social media previews) -->
+    <meta property="og:title" content="My Website">
+    <meta property="og:description" content="Zixia Jiang's website: Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zixiabooks.org">
+    <meta property="og:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- Twitter card preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Website">
+    <meta name="twitter:description" content="Zixia Jiang's website: Home">
+    <meta name="twitter:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- PWA / mobile app behavior -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Home">
+
+    <!-- Prevent automatic phone/email detection on iOS -->
+    <meta name="format-detection" content="telephone=no">
     <style>
         * {
             font-family: sans-serif;
@@ -11,14 +41,16 @@
         }
 
         #Topbar {
-            border: 2px solid black;
+            border: 3px solid black;
             display: flex;
             justify-content: space-around;
             background-color: lightcyan;
+            position: sticky !important;
         }
 
         .Topbar_items {
             margin: 5px;
+            position: sticky !important;
         }
 
         #Switch-Language {
@@ -42,15 +74,6 @@
             margin: 50px;
         }
 
-        /* Page content animation */
-        .English-version, .Chinese-version {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
         .hidden {
             opacity: 0;
             transform: translateY(10px);
@@ -62,14 +85,14 @@
             transform-origin: top right;
         }
 
-        a {
+        #Topbar a {
             background: transparent;
             transition: 0.5s;
             transform-origin: top right;
         }
 
-        a:hover, button:hover {
-            transform: rotate(3deg) scale(1.2);
+        #Topbar a:hover, #Topbar button:hover {
+            transform: rotate(3deg) scale(1.2) !important;
             cursor: alias !important;
         }
 
@@ -78,17 +101,41 @@
             margin-top: 20px;
         }
 
-        .fade {
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
-
         p {
             margin-left: 7%;
-            margin-right: 30%;
+            margin-right: 7%;
             text-align: justify;
             font-size: x-large;
         }
+
+        h2 {
+            text-align: center !important;
+            margin: 40px;
+        }
+
+        .main_container {
+            display: grid;
+            grid-template-areas:
+            "header header header"
+            "sidebar main main";
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        #sidebar a {
+            display: block;
+            margin: 10px;
+            font-size: x-large;
+        }
+
+        #sidebar {
+            position: sticky;
+            top: 50px;
+            align-self: start;
+        }
+
+        header {grid-area: header;}
+        #sidebar {grid-area: sidebar;}
+        article {grid-area: main;}
 
     </style>
 </head>
@@ -96,78 +143,83 @@
 <noscript><h1>Please enable JavaScript for this website to work.</h1></noscript>
 
 <!-- Topbar (unchanged) -->
-<div id="Topbar">
-    <a href="home.html" class="Topbar_items">Home</a>
-    <a href="About%20me.html" class="Topbar_items">About Me</a>
-    <a href="books.html" class="Topbar_items">My Books</a>
-    <a href="my_blog.html" class="Topbar_items">My Blog</a>
-    <a href="resources.html" class="Topbar_items">Resources</a>
-    <a href="contact.html" class="Topbar_items">Contact</a>
-    <button id="Switch-Language">切换成汉语</button>
-</div>
+<div class="main_container">
+    <header>
+        <div id="Topbar">
+            <a href="home.html" class="Topbar_items">Home</a>
+            <a href="About%20me.html" class="Topbar_items">About Me</a>
+            <a href="books.html" class="Topbar_items">My Books</a>
+            <a href="classes.html" class="Topbar_items">My Classes</a>
+            <a href="resources.html" class="Topbar_items">Resources</a>
+            <a href="contact.html" class="Topbar_items">Contact</a>
+            <button id="Switch-Language">切换成汉语</button>
+        </div>
+    </header>
+    <div id="sidebar" style="border: 3px solid black">
+        <div class="Chinese-version">
+            <a href="#part1c">首页</a>
+        </div>
 
-<!-- Page content with language versions -->
-<div class="content">
-    <div class="Chinese-version">
-        <h1>首页</h1>
-        <p>二十多年来，我的工作始终围绕一个核心问题展开：<strong>学习者如何才能最有效地习得第一语言和第二语言？</strong></p>
-        <p>作为一名持有教师资格证的汉语教师、应用语言学研究员和儿童读写书籍作者，我通过教学实践、学术研究和书籍写作来探索这个问题。多年来，这些经历使我形成了诸多独特的见解。</p>
-        <p>在这个网站上，我展示了我的主要工作和项目。您可以在这里找到我撰写的书籍、发表的学术文章，以及我旅行中的感想和笔记。</p>
+
+        <div class="English-version">
+            <a href="#part1e">Home</a>
+        </div>
     </div>
+    <!-- Page content with language versions -->
+    <article>
+        <div class="content">
+            <div class="Chinese-version">
+                <h1 id="part1c">首页</h1>
+                <p>二十多年来，我的工作始终围绕一个核心问题展开：<strong>学习者如何才能最有效地习得第一语言和第二语言？</strong></p>
+                <p>作为一名持有教师资格证的汉语教师、应用语言学研究员和儿童读写书籍作者，我通过教学实践、学术研究和书籍写作来探索这个问题。多年来，这些经历使我形成了诸多独特的见解。</p>
+                <p>在这个网站上，我展示了我的主要工作和项目。您可以在这里找到我撰写的书籍、发表的学术文章，以及我旅行中的感想和笔记。</p>
+            </div>
 
 
 
 
-
-
-
-    <div class="English-version">
-        <h1>Home</h1>
-        <p>
-            &#9;For more than two decades, my work has centered on one core question: <strong>How do learners most effectively acquire a first and a second language?</strong>
-        </p>
-        <p>
-            &#9;As a certified Mandarin teacher, an applied linguistics researcher, and an author of children’s literacy books, I explore this question through teaching practice, academic research, and book writing. Over the years, these experiences have led me to develop a number of unique insights.
-        </p>
-        <p>
-            &#9;On this website, I present my main work and projects. Here you can find the books I have written, the academic articles I have published, and reflections and notes from my travels.
-
-        </p>
-    </div>
+            <div class="English-version">
+                <h1 id="part1e">Home</h1>
+                <p>
+                    For more than two decades, my work has centered on one core question: <strong>How do learners most effectively acquire a first and a second language?</strong>
+                </p>
+                <p>
+                    As a certified Mandarin teacher, an applied linguistics researcher, and an author of children’s literacy books, I explore this question through teaching practice, academic research, and book writing. Over the years, these experiences have led me to develop a number of unique insights.
+                </p>
+                <p>
+                    On this website, I present my main work and projects. Here you can find the books I have written, the academic articles I have published, and reflections and notes from my travels.
+                </p>
+            </div>
+        </div>
+    </article>
 </div>
-
 <script>
     // Functions to show/hide content
     function hide_class(elements) {
         for (const el of elements) {
-            el.classList.add('hidden');
+            el.style.display = "none";
         }
     }
 
     function show_class(elements) {
         for (const el of elements) {
-            el.classList.remove('hidden');
+            el.style.display = "block";
         }
     }
 
     // Language switch function
     function switch_language() {
-        switch_languageBTN.classList.add("fade");
-
-        setTimeout(() => {
-            if (current_language === "Chinese") {
-                show_class(english_version);
-                hide_class(chinese_version);
-                current_language = "English";
-                switch_languageBTN.textContent = "切换成汉语";
-            } else {
-                hide_class(english_version);
-                show_class(chinese_version);
-                current_language = "Chinese";
-                switch_languageBTN.textContent = "Switch to English";
-            }
-            switch_languageBTN.classList.remove("fade");
-        }, 250);
+        if (current_language === "Chinese") {
+            show_class(english_version);
+            hide_class(chinese_version);
+            current_language = "English";
+            switch_languageBTN.textContent = "切换成汉语";
+        } else {
+            hide_class(english_version);
+            show_class(chinese_version);
+            current_language = "Chinese";
+            switch_languageBTN.textContent = "Switch to English";
+        }
     }
 
     const switch_languageBTN = document.getElementById("Switch-Language");
@@ -176,7 +228,8 @@
     const chinese_version = document.getElementsByClassName("Chinese-version");
 
     // Hide Chinese content initially
-    hide_class(chinese_version);
+    hide_class(chinese_version)
+    show_class(english_version)
 
     switch_languageBTN.addEventListener("click", switch_language);
 

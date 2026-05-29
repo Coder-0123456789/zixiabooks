@@ -1,8 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>
+        My Books
+    </title>
     <meta charset="UTF-8">
-    <title>Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic SEO -->
+    <meta name="description" content="Zixia Jiang's website">
+    <meta name="author" content="Zixia Jiang">
+    <meta name="robots" content="index, follow">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#87CEEB">
+
+    <!-- Open Graph (social media previews) -->
+    <meta property="og:title" content="My Website">
+    <meta property="og:description" content="Zixia Jiang's website: Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zixiabooks.org">
+    <meta property="og:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- Twitter card preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Website">
+    <meta name="twitter:description" content="Zixia Jiang's website: Home">
+    <meta name="twitter:image" content="https://zixiabooks.org/about_me_photo.png">
+
+    <!-- PWA / mobile app behavior -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Home">
+
+    <!-- Prevent automatic phone/email detection on iOS -->
+    <meta name="format-detection" content="telephone=no">
     <style>
         * {
             font-family: sans-serif;
@@ -11,14 +43,16 @@
         }
 
         #Topbar {
-            border: 2px solid black;
+            border: 3px solid black;
             display: flex;
             justify-content: space-around;
             background-color: lightcyan;
+            position: sticky !important;
         }
 
         .Topbar_items {
             margin: 5px;
+            position: sticky !important;
         }
 
         #Switch-Language {
@@ -39,15 +73,7 @@
 
         h1 {
             text-align: center !important;
-        }
-
-        /* Page content animation */
-        .English-version, .Chinese-version {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            margin: 50px;
         }
 
         .hidden {
@@ -61,14 +87,14 @@
             transform-origin: top right;
         }
 
-        a {
+        #Topbar a {
             background: transparent;
             transition: 0.5s;
             transform-origin: top right;
         }
 
-        a:hover, button:hover {
-            transform: rotate(3deg) scale(1.2);
+        #Topbar a:hover, #Topbar button:hover {
+            transform: rotate(3deg) scale(1.2) !important;
             cursor: alias !important;
         }
 
@@ -77,16 +103,41 @@
             margin-top: 20px;
         }
 
-        .fade {
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
         p {
             margin-left: 7%;
-            margin-right: 30%;
+            margin-right: 7%;
             text-align: justify;
             font-size: x-large;
         }
+
+        h2 {
+            text-align: center !important;
+            margin: 40px;
+        }
+
+        .main_container {
+            display: grid;
+            grid-template-areas:
+            "header header header"
+            "sidebar main main";
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        #sidebar a {
+            display: block;
+            margin: 10px;
+            font-size: x-large;
+        }
+
+        #sidebar {
+            position: sticky;
+            top: 50px;
+            align-self: start;
+        }
+
+        header {grid-area: header;}
+        #sidebar {grid-area: sidebar;}
+        article {grid-area: main;}
 
     </style>
 </head>
@@ -94,64 +145,162 @@
 <noscript><h1>Please enable JavaScript for this website to work.</h1></noscript>
 
 <!-- Topbar (unchanged) -->
-<div id="Topbar">
-    <a href="home.html" class="Topbar_items">Home</a>
-    <a href="About%20me.html" class="Topbar_items">About Me</a>
-    <a href="books.html" class="Topbar_items">My Books</a>
-    <a href="my_blog.html" class="Topbar_items">My Blog</a>
-    <a href="resources.html" class="Topbar_items">Resources</a>
-    <a href="contact.html" class="Topbar_items">Contact</a>
-    <button id="Switch-Language">切换成汉语</button>
-</div>
+<div class="main_container">
+    <header>
+        <div id="Topbar">
+            <a href="home.html" class="Topbar_items">Home</a>
+            <a href="About%20me.html" class="Topbar_items">About Me</a>
+            <a href="books.html" class="Topbar_items">My Books</a>
+            <a href="classes.html" class="Topbar_items">My Classes</a>
+            <a href="resources.html" class="Topbar_items">Resources</a>
+            <a href="contact.html" class="Topbar_items">Contact</a>
+            <button id="Switch-Language">切换成汉语</button>
+        </div>
+    </header>
+    <div id="sidebar" style="border: 3px solid black">
+        <div class="Chinese-version">
+            <a href="#part1c">魔法拼音国</a>
+            <a href="#part2c">魔法树汉字启蒙翻翻书</a>
+            <a href="#part3c">“小小语言家”汉语分级读物</a>
+        </div>
 
-<!-- Page content with language versions -->
-<div class="content">
-    <div class="Chinese-version">
-        <h1>我的书</h1>
+
+        <div class="English-version">
+            <a href="#part1e">Magic Pinyin Land</a>
+            <a href="#part2e">The magic tree: My first Chinese Character Flip book</a>
+            <a href="#part3e">The Little Linguist: Chinese Graded Readers</a>
+        </div>
     </div>
+    <!-- Page content with language versions -->
+    <article>
+        <div class="content">
+            <div class="Chinese-version">
+                <h1>我的书</h1>
+                <ol>
+                    <li>
+                        <h2 id="part1c">魔法拼音国</h2>
+                        <p>从前，有一个神奇的拼音国。那里有声母城、韵母市和声调村，每一个字母都是一个可爱的小人儿。</p>
+                        <p>有一天，声母和韵母相遇了。它们通过拼合，帮助泡泡女孩实现各种愿望。故事同时在两个世界展开：一个是字母们的世界，一个是小女孩的世界。两个世界相互交织，让孩子在阅读故事的同时，自然而然地理解拼音的拼读规则。</p>
+                        <p>全套书共7册，通过生动有趣的故事，引出汉语拼音的全部声母和韵母。正文和游戏部分共涉及300多个音节，并结合孩子们熟悉的动物、植物和日常生活场景。</p>
+                        <p>在每册故事之后，还附有“r的日记”，用图文结合的方式总结拼音学习中的难点和标调规则。</p>
+                        <p>此外，配套的3册游戏手册延续了女孩和王子的探险故事，通过各种有趣的游戏帮助孩子巩固拼音知识。</p>
+                        <p>书中还附赠拼音卡片，可以通过多种互动方式进行学习和游戏。</p>
+                        <p>孩子们读完这套书，往往在不知不觉中掌握了完整的汉语拼音体系。</p>
+                        <h3>购买此书：<a href="https://www.amazon.com/Pinyin-Kingdom-Updated-Volumes-Chinese/dp/7559717462">Amazon,</a> <a href="https://product.dangdang.com/28497883.html">DangDang</a></h3>
+                    </li>
+                    <li>
+                        <h2 id="part2c">魔法树汉字启蒙翻翻书</h2>
+                        <p>识字是阅读的基础，也是语文学习的重要起点。如何帮助儿童科学、有效地学习汉字，一直是家长和教育界广泛关注的问题。</p>
+                        <p>许多现有的汉字启蒙材料在选字方面缺乏系统性，数量和难度参差不齐；有些材料虽然设计成图书，却缺乏故事性，使得识字与阅读彼此分离。结果往往是：孩子认识了很多字，却很难真正阅读一本书。</p>
+                        <p>“魔法树”系列共<b>4</b>册翻翻书，精选了儿童汉字启蒙阶段最需要掌握的 <b>216</b>个基础汉字。大部分汉字都通过图形与图画进行形象化呈现，帮助孩子建立直观的理解。</p>
+                        <p>全书通过四个连续的小故事将这些汉字串联起来，让孩子在阅读故事的过程中自然识字，并通过阅读不断强化对汉字的理解。</p>
+                        <p>这套书适合 <b>3—8岁</b> 正在开始学习汉字的儿童，可以由家长朗读，也可以进行亲子共读，是一套兼具趣味性和系统性的汉字启蒙读物。</p>
+                        <h3>购买此书: <a href="https://item.jd.com/14517064.html">JingDong</a></h3>
+                    </li>
+                    <li>
+                        <h2 id="part3c">“小小语言家”汉语分级读物</h2>
+                        <p>“分级阅读”最早在对外汉语教学领域得到广泛应用，例如“中文小书架”等项目就是较早的探索。而在母语儿童阅读领域，分级阅读的发展相对较晚。</p>
+                        <p>我曾就这一问题进行了大量调研，并撰写了《基础教育阶段应实施分级阅读》一文，倡议在基础教育阶段推广分级阅读。该文章发表于教育部的《教育决策咨询》内参。</p>
+                        <p>除了理论倡议，我也希望通过实践探索适合儿童的汉语分级读物。同时，这也是为了满足我女儿早期汉语阅读的需要。</p>
+                        <p>在创作过程中，我给自己设定了三个原则：</p>
+                        <ul>
+                            <li><h3>科学分级</h3></li>
+                            <li><h3>故事有趣</h3></li>
+                            <li><h3>融入中国文化</h3></li>
+                        </ul>
+                        <p>“小小语言家”系列共分为五个阅读阶段：</p>
+                        <ol>
+                            <li><h3>给我读 —— 父母为孩子朗读的亲子阅读</h3></li>
+                            <li><h3>教我读 —— 父母为主、孩子参与的分享阅读</h3></li>
+                            <li><h3>帮我读 —— 孩子为主、父母辅助的阅读</h3></li>
+                            <li><h3>听我读 —— 孩子基本能够独立阅读</h3></li>
+                            <li><h3>自己读 —— 完全自主阅读</h3></li>
+                        </ol>
+                        <p>在有限的字词范围内写故事并不难，但要写出真正有趣、让孩子喜欢的故事却非常具有挑战。我乐于接受这样的挑战，也会继续以为自己孩子写书的初心，以及学术研究的严谨态度，持续创作更好的儿童读物。</p>
+                    </li>
+                </ol>
 
-    <div class="English-version">
-        <h1>My Books</h1>
-        <ol>
-            <li>
-                <h2>Magic PinYin Land(《魔法拼音国》)</h2>
-            </li>
-        </ol>
-    </div>
+            </div>
+
+
+
+
+            <div class="English-version">
+                <h1>My books</h1>
+                <ol>
+                    <li>
+                        <h2 id="part1e">Magic Pinyin Land</h2>
+                        <p>Once upon a time, there was a magical land of pinyin. In this world there were <b>Initial City, Final Town, and Tone Village,</b> and every letter was a lively little character.</p>
+                        <p>One day, initials and finals met each other. By combining into syllables, they helped a girl named <b>Bubble</b> make her wishes come true. The story unfolds along two parallel lines: the world of letters and the world of the girl. As the two storylines intertwine, children naturally learn how pinyin syllables are formed.</p>
+                        <p>The complete series contains <strong>ten books,</strong> introducing all Mandarin initials and finals through engaging stories. More than <strong>300 syllables</strong> appear throughout the stories and games, often connected to familiar themes such as animals, plants, and everyday objects.</p>
+                        <p>Each volume also includes <b>“R’s Diary,”</b> a visual summary that explains challenging points and tone-marking rules in an accessible way.</p>
+                        <p>In addition, <b>three companion game books</b> continue the adventure of the girl and the prince, helping children reinforce their learning through playful activities.</p>
+                        <p>The set also includes <b>pinyin cards</b> that can be used in many interactive games.</p>
+                        <p>By the time children finish the series, they often find that they have mastered the entire pinyin system almost effortlessly.</p>
+                        <h3>Buy this book: <a href="https://www.amazon.com/Pinyin-Kingdom-Updated-Volumes-Chinese/dp/7559717462">Amazon,</a> <a href="https://product.dangdang.com/28497883.html">DangDang</a></h3>
+                    </li>
+                    <li>
+                        <h2 id="part2e">The Magic Tree: My first Chinese Character Lift-the-Flap Books</h2>
+                        <p>Learning characters is the foundation of reading and a crucial starting point for Chinese literacy. Helping children learn characters in a systematic and engaging way has long been a key concern for both parents and educators.</p>
+                        <p>Many existing early Chinese character books select characters rather randomly, with inconsistent difficulty levels. Others present characters in isolation without meaningful stories, separating character recognition from real reading. As a result, children may recognize many characters but still struggle to read a book independently.</p>
+                        <p>The <b>Magic Tree series</b>, a set of <b>four lift-the-flap books,</b> introduces <strong>216 essential Chinese characters</strong> that are most useful for beginning learners.</p>
+                        <p>Most characters are visually connected with illustrations, helping children understand them through imagery. These characters are woven into <b>four connected stories,</b> allowing children to recognize characters through reading and reinforce them through repeated exposure in context.</p>
+                        <p>Designed for children aged <b>3–8,</b> the books can be read aloud by parents or enjoyed together as shared reading. The series provides a playful yet systematic introduction to Chinese characters.</p>
+                        <h3>Buy this book: <a href="https://item.jd.com/14517064.html">JingDong</a></h3>
+                    </li>
+                    <li>
+                        <h2 id="part3e">The Little Linguist: Chinese Graded Readers</h2>
+                        <p>The concept of <b>graded reading</b> was first widely developed in the field of teaching Chinese as a second language. Early projects such as Chinese Breeze explored this approach for language learners. In contrast, graded reading for <b>native Chinese-speaking children</b> has developed more slowly.</p>
+                        <p>To address this issue, I conducted extensive research and wrote the article “Graded Reading Should Be Implemented in Basic Education.” The article was published in the Ministry of Education’s policy journal Education Decision Consultation.</p>
+                        <p>Beyond advocating the idea, I also wanted to explore practical solutions. Part of the motivation came from a personal need: finding appropriate early reading materials for my own daughter.</p>
+                        <p>When writing the series, I set three guiding principles:</p>
+                        <ul>
+                            <li><h3>scientifically structured levels</h3></li>
+                            <li><h3>engaging and enjoyable stories</h3></li>
+                            <li><h3>integration of Chinese culture</h3></li>
+                        </ul>
+                        <p>The <b>Little Linguist</b> series is organized into <b>five reading stages:</b></p>
+                        <ol>
+                            <li><h3><b>Read to Me</b> — parent read-aloud</h3></li>
+                            <li><h3><b>Read with Me</b> — shared reading led by parents</h3></li>
+                            <li><h3><b>Help Me Read</b> — child-led reading with support</h3></li>
+                            <li><h3><b>Listen to Me Read</b> — mostly independent reading</h3></li>
+                            <li><h3><b>I Can Read</b> — fully independent reading</h3></li>
+                        </ol>
+                        <p>Writing stories with limited vocabulary is not difficult, but creating stories that are truly engaging for children is much more challenging. I enjoy this challenge and will continue writing children’s books with both a parent’s heart and a researcher’s rigor.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </article>
 </div>
-
 <script>
     // Functions to show/hide content
     function hide_class(elements) {
         for (const el of elements) {
-            el.classList.add('hidden');
+            el.style.display = "none";
         }
     }
 
     function show_class(elements) {
         for (const el of elements) {
-            el.classList.remove('hidden');
+            el.style.display = "block";
         }
     }
 
     // Language switch function
     function switch_language() {
-        switch_languageBTN.classList.add("fade");
-
-        setTimeout(() => {
-            if (current_language === "Chinese") {
-                show_class(english_version);
-                hide_class(chinese_version);
-                current_language = "English";
-                switch_languageBTN.textContent = "切换成汉语";
-            } else {
-                hide_class(english_version);
-                show_class(chinese_version);
-                current_language = "Chinese";
-                switch_languageBTN.textContent = "Switch to English";
-            }
-            switch_languageBTN.classList.remove("fade");
-        }, 250);
+        if (current_language === "Chinese") {
+            show_class(english_version);
+            hide_class(chinese_version);
+            current_language = "English";
+            switch_languageBTN.textContent = "切换成汉语";
+        } else {
+            hide_class(english_version);
+            show_class(chinese_version);
+            current_language = "Chinese";
+            switch_languageBTN.textContent = "Switch to English";
+        }
     }
 
     const switch_languageBTN = document.getElementById("Switch-Language");
@@ -160,7 +309,8 @@
     const chinese_version = document.getElementsByClassName("Chinese-version");
 
     // Hide Chinese content initially
-    hide_class(chinese_version);
+    hide_class(chinese_version)
+    show_class(english_version)
 
     switch_languageBTN.addEventListener("click", switch_language);
 
